@@ -1,7 +1,7 @@
 from flask import Flask
 import json
 
-from flask_pytest_example.handlers.routes import configure_routes
+from handlers.routes import configure_routes
 
 
 def test_base_route():
@@ -71,3 +71,4 @@ def test_post_route__failure__bad_request():
 
     response = client.post(url, data=json.dumps(mock_request_data), headers=mock_request_headers)
     assert response.status_code == 400
+
