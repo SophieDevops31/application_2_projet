@@ -28,6 +28,9 @@
   - name: Add Docker Repository
     shell: 'sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" '
     become: 'yes'
+  - name: 
+    shell: "curl -O https://download.docker.com/linux/debian/dists/buster/pool/stable/amd64/containerd.io_1.4.3-1_amd64.deb"
+    become: 'yes'
   - name: Update apt and install docker-ce
     apt:
       name: 
