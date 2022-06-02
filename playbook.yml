@@ -30,11 +30,10 @@
     become: 'yes'
   - name: Update apt and install docker-ce
     apt:
-      update_cache: true
-      name:
+      name: 
          - docker-ce
          - docker-ce-cli
-         - containerd.io
+         - containerd.io 
          - docker-compose-plugin
       state: latest
       update_cache: true
