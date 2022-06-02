@@ -30,6 +30,7 @@
     become: 'yes'
   - name: Update apt and install docker-ce
     apt:
+      update_cache: true
       name:
          - docker-ce
          - docker-ce-cli
@@ -38,14 +39,13 @@
       state: latest
       update_cache: true
     become: 'yes'
-  - name: clone git
-    git:
-      repo: https://github.com/NaimAssoumani/Projets_Devops_flask
+  - name: clone git 
+    git: 
+      repo: https://github.com/SophieDevops31/application_2_projet.git
       dest: /home/vagrant/AppFlask
-      version: preprod
+      version: master 
       clone: yes
       update: no
-
   - name: docker compose
     shell: "cd AppFlask; sudo docker compose down; sudo docker compose up -d"
     become: 'yes'
